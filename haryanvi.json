@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "img":"Hr_img/img1.jpg",
+        "title":"Dada Lakhmichand",
+        "sub_title":"Dada Lakhmi is based on the musical journey of Pandit Lakhmichand, a folk artist who hailed from Haryana."
+    },
+    {
+        "id":2,
+        "img":"Hr_img/img2.jpg",
+        "title":"Laal Rang",
+        "sub_title":"The friendship of two men is tested when things go wrong in their blood theft business."
+    },
+    {
+        "id":3,
+        "img":"Hr_img/img3.jpg",
+        "title":"Tera Mera Vada",
+        "sub_title":"This story based on a funny seen and a good friendship of two human"
+    }   
+]

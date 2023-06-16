@@ -1,0 +1,51 @@
+[
+    {
+        "img":"homeCard/survival-movies-1588091646.jpg",
+        "link":"movie.html",
+        "year":"(2023)",
+        "title":"Hollywood Movies For You",
+        "subTitle":"Click and Watch all Hollywood movies"
+    },
+    {
+        "img":"homeCard/most-awaited-movies-2023.jpg",
+        "link":"movie.html",
+        "year":"(2023)",
+        "title":"Bollywood Movies For You",
+        "subTitle":"Click and Watch all Bollywood movies"
+    },
+    {
+        "img":"homeCard/maxresdefault.jpg",
+        "link":"movie.html",
+        "year":"(2023)",
+        "title":"Haryanvi Movies For You",
+        "subTitle":"Click and Watch all Haryanvi movies"
+    },
+    {
+        "img":"homeCard/100672753.webp",
+        "link":"movie.html",
+        "year":"(2023)",
+        "title":"Punjabi Movies For You",
+        "subTitle":"Click and Watch all Punjabi movies"
+    },
+    {
+        "img":"homeCard/Top-10-Multi-Media-Franchises-That-Have-it-All-Games-Movies-Shows-and-Comics.jpg",
+        "link":"",
+        "year":"(2023)",
+        "title":"Cartoon Movies For You",
+        "subTitle":"Sorry! it is not AVAILABLE"
+    },
+    {
+        "img":"homeCard/maxresdefault (1).jpg",
+        "link":"",
+        "year":"(2023)",
+        "title":"Letest Song For You",
+        "subTitle":"Sorry! it is not AVAILABLE"
+    },
+    {
+        "img":"homeCard/Best-Indian-Web-Series-in-Hindi.png",
+        "link":"",
+        "year":"(2023)",
+        "title":"Web-Series  For You",
+        "subTitle":"Sorry! it is not AVAILABLE"
+    }
+]
