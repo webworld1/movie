@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie</title>
+    <link rel="stylesheet" href="index.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="hollywood.json">
+    <link rel="stylesheet" href="bollywood.json">
+    <link rel="stylesheet" href="haryanvi.json">
+    <link rel="stylesheet" href="punjabi.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Lobster&family=Mate+SC&family=Pacifico&family=Poppins&family=Righteous&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@400;700;900&family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="movie.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Righteous&family=Roboto+Condensed&family=Roboto:wght@400;900&family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <script>
+    $(function(){
+        $('.mdlink').mouseenter(function(){
+            $('.micon').css("color","red");
+        });
+        $('.mdlink').mouseleave(function(){
+            $('.micon').css("color","white");
+        });
+      $('#pills-tab a').on('click',function(e){
+        e.preventDefault(),
+        $(this).tab('show')
+      })
+      $('#secondId a').on('click',function(e){
+        e.preventDefault(),
+        $(this).tab('show')
+      })
+    })
+  </script>
+
+  <script>
+    let a="";
+    fetch('hollywood.json').then((res)=>res.json())
+    .then((result)=>{
+        // console.log(result);
+        result.map((data)=>{
+            // console.log(data);
+            a+=`<div class="col-xl-3 col-md-5 col-sm-10 col-12 m-4" >
+                    <div class="card border-0">
+                        <img class="card-img img rounded-bottom-0" src="${data.img}" alt="">
+                        <div class="card-body bg-black rounded-bottom-2">
+                            <h3 class="text-warning my-3 card-title">${data.title} <span class="disabled fs-6 text-secondary">${data.year}</span></h3>
+                             <p class="text-light  my-2">${data.sub_title}</p>
+                        </div>
+                    </div>
+                </div>`;
+                document.getElementById('hollywoodContain').innerHTML=a;
+                document.getElementById('Hollywood').innerHTML=a;
+        })
+    })
+
+    
+    let b="";
+    fetch('bollywood.json').then((res)=>res.json())
+    .then((result)=>{
+        // console.log(result);
+        result.map((data)=>{
+            // console.log(data);
+            b+=`<div class="col-xl-3 col-md-5 col-sm-10 col-12 m-4" >
+                    <div class="card border-0">
+                        <img class="card-img img rounded-bottom-0" src="${data.img}" alt="">
+                        <div class="card-body bg-black rounded-bottom-2">
+                            <h3 class="text-warning my-3 card-title">${data.title} <span class="disabled fs-6 text-secondary">${data.year}</span></h3>
+                             <p class="text-light pera my-2">${data.sub_title}</p>
+                        </div>
+                    </div>
+                </div>`;
+                document.getElementById('bollywoodContain').innerHTML=b;
+                document.getElementById('Bollywood').innerHTML=b;
+        })
+    })
+
+    let c="";
+    fetch('punjabi.json').then((res)=>res.json())
+    .then((result)=>{
+        // console.log(result);
+        result.map((data)=>{
+            // console.log(data);
+            c+=`<div class="col-xl-3 col-md-5 col-sm-10 col-12 m-4" >
+                    <div class="card border-0">
+                        <img class="card-img img rounded-bottom-0" src="${data.img}" alt="">
+                        <div class="card-body bg-black rounded-bottom-2">
+                            <h3 class="text-warning my-3 card-title">${data.title} <span class="disabled fs-6 text-secondary">${data.year}</span></h3>
+                             <p class="text-light pera my-2">${data.sub_title}</p>
+                        </div>
+                    </div>
+                </div>`;
+                document.getElementById('punjabiContain').innerHTML=c;
+                document.getElementById('Punjabi').innerHTML=c;
+        })
+    })
+
+    let d="";
+    fetch('haryanvi.json').then((res)=>res.json())
+    .then((result)=>{
+        // console.log(result);
+        result.map((data)=>{
+            // console.log(data);
+            d+=`<div class="col-xl-3 col-md-5 col-sm-10 col-12 m-4" >
+                    <div class="card border-0">
+                        <img class="card-img img rounded-bottom-0" src="${data.img}" alt="">
+                        <div class="card-body bg-black rounded-bottom-2">
+                            <h3 class="text-warning my-3 card-title">${data.title} <span class="disabled fs-6 text-secondary">${data.year}</span></h3>
+                             <p class="text-light my-2">${data.sub_title}</p>
+                        </div>
+                    </div>
+                </div>`;
+                document.getElementById('haryanviContain').innerHTML=d;
+                document.getElementById('Haryanvi').innerHTML=d;
+        })
+    })
+
+
+  </script>
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <div class="container-fluid d-flex flex-column justify-content-center">
+        <div class="row bg-black ">
+            <div class="col-12 position-fixed zindex">   
+                <nav id="navbar" class="navbar navbar-expand-lg ">
+                    <a href="" class="navbar-brand "><h1 class="text-danger font">Movie World</h1></a>
+                    
+                    <button class=" btn navbar-toggler bg-warning me-4" data-bs-toggle="collapse" data-bs-target="#navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="navigation" class="navbar-collapse collapse">
+                    <ul class="navbar-nav  d-flex flex-md-row justify-content-center  flex-column  mx-auto fw-bold">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link px-5 ">Home</a>
+                            <span class="disabled fs-6"></span>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#movie" class="nav-link drop px-5 active text-danger dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dropdown1">Movie</a>
+                            <div id="dropdown1" class="collapse d-lg-none">
+                                <ul class="nav  mb-auto d-flex flex-column" id="pills-tab">
+                                    <li class="nav-item">
+                                        <a href="#all" class="nav-link  text-center active text-white ">All</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#hollywood" class="nav-link  text-center text-white">Hollywood</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#bollywood" class="nav-link   text-center text-white">bollywood</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#punjabi" class="nav-link   text-center text-white">Punjabi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#haryanvi" class="nav-link   text-center text-white">Haryanvi</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-5">Music</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-5">Story</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-5">Cartoon</a>
+                        </li>
+                    </ul>
+                   
+                </div>
+                </nav>
+            </div>
+       </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="row">
+                        <!-- side bar menue of movies -->
+                <div class="position-fixed sidebar d-none d-lg-block col-2 my-5  d-flex flex-column justify-content-center align-items-center bg-black">
+                    <h4 class="display-6 text-center text-warning mb-auto">Movies</h4>
+                 <ul class="nav d-flex flex-column mb-auto" id="pills-tab">
+                     <li class="nav-item">
+                         <a href="#all" class="nav-link sidebar1 text-center active ">All</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#hollywood" class="nav-link sidebar1  text-center ">Hollywood</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#bollywood" class="nav-link sidebar1  text-center ">bollywood</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#punjabi" class="nav-link sidebar1  text-center ">Punjabi</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#haryanvi" class="nav-link sidebar1  text-center ">Haryanvi</a>
+                     </li>
+                 </ul>
+                </div>
+                    <div class="col-lg-2 "></div>
+                    <div class="col-lg-10">
+                       
+                            <!-- <div class="container-fluid ">
+                                <div class="row" id="show_all"> </div>
+                            </div> -->
+                        
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="all">
+                                    <div class="row">
+                                    <!-- Hollywood movies block -->
+                                    <div class="container-fluid ">
+                                        <div class="row">
+                                            <div class="col-12"  id="all_movie">
+                
+                                                <!-- Movie heading place -->
+                                                <div class="row bg-black w-100 mx-auto">
+                                                    <div class="col-12 text-start text-white text-center mt-4">
+                                                            <h1 class="fw-bolder"> <span class="text-warning"> All New</span> Movies For You</h1>
+                                                            <p class="fw-bold fs-2 text-danger">Watch anywhere. Cancel anytime.</p>
+                                                    </div>
+                                                </div>
+                                               
+                                                <!-- Movie carousel place -->
+                                                <div class="row w-100 d-flex justify-content-center my-2 mx-auto">
+                                                    <div class="col-12 d-flex justify-content-center align-items-center">
+                                                    <div id="carouselExampleIndicators1" class="slider overflow-hidden carousel slide mb-5" data-bs-ride="slide">
+                                                        <div class="carousel-indicators">
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="4" aria-label="Slide 3"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="5" aria-label="Slide 3"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="6" aria-label="Slide 3"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="7" aria-label="Slide 3"></button>
+                                                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="8" aria-label="Slide 3"></button>
+                                                        </div>
+                                                        <div class="carousel-inner">
+                                                            <div class="carousel-item active ">
+                                                                <img class="w-100" src="imgH/IMAGE_1680000828.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item  ">
+                                                                <img class="w-100" src="B_img/B_imgimg7.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item  ">
+                                                                <img class="w-100" src="imgH/dune-poster-9.webp" alt="">
+                                                            </div>
+                                                            <div class="carousel-item  ">
+                                                                <img class="w-100" src="imgH/243470-fast-x-twitter.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item  ">
+                                                                <img class="w-100" src="Hr_img/img1.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item  ">
+                                                                <img class="w-100" src="B_img/B_imgimg6.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item ">
+                                                                <img class="w-100" src="Hr_img/img2.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item ">
+                                                                <img class="w-100" src="P_img/img1.jpg" alt="">
+                                                            </div>
+                                                            <div class="carousel-item ">
+                                                                <img class="w-100" src="P_img/img3.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                    </div>
+                                                </div>
+            
+                                                <h1 class="text-white m-5 p-1 d-inline headingBorder">Hollywood Movies </h1>
+                
+        
+                                                <!-- Movie cards place -->
+                                                <div class="row d-flex justify-content-evenly my-5 " id="Hollywood">
+                                                    <div class="col-md-3 m-4">
+                                                        <div class="card border-0">
+                                                            <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                            <div class="card-body bg-black rounded-bottom-2">
+                                                               <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                               <p class="text-danger my-2">you can Watch all movies</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr class="text-white my-5 mx-auto">
+                                                <h1 class="text-white m-5 p-1 d-inline headingBorder">Bollywood Movies </h1>
+                                                <div class="row d-flex justify-content-evenly my-5" id="Bollywood">
+                                                    <div class="col-md-3 m-4">
+                                                        <div class="card border-0">
+                                                            <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                            <div class="card-body bg-black rounded-bottom-2">
+                                                               <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                               <p class="text-danger my-2">you can Watch all movies</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="text-white my-5 mx-auto">
+                                                <h1 class="text-white m-5 p-1 d-inline headingBorder">Punjabi Movies </h1>
+                                                <div class="row d-flex justify-content-evenly my-5" id="Punjabi">
+                                                    <div class="col-md-3 m-4">
+                                                        <div class="card border-0">
+                                                            <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                            <div class="card-body bg-black rounded-bottom-2">
+                                                               <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                               <p class="text-danger my-2">you can Watch all movies</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="text-white my-5 mx-auto">
+                                                <h1 class="text-white m-5 p-1 d-inline headingBorder">Haryanvi Movies </h1>
+                                                <div class="row d-flex justify-content-evenly my-5" id="Haryanvi">
+                                                    <div class="col-md-3 m-4">
+                                                        <div class="card border-0">
+                                                            <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                            <div class="card-body bg-black rounded-bottom-2">
+                                                               <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                               <p class="text-danger my-2">you can Watch all movies</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                                </div>
+                            
+                                <div class="tab-pane" id="hollywood">
+                                    <!-- Hollywood movies block -->
+                                    <div class="col-12" id="holly">
+        
+                                        <!-- Hollywood heading place -->
+                                        <div class="row bg-black w-100">
+                                            <div class="col-12 text-start text-white text-center my-4">
+                                                    <h1 class="fw-bolder"> <span class="text-warning">Hollywood</span> Movies For You</h1>
+                                                    <p class="fw-bold fs-2 text-danger">Watch anywhere. Cancel anytime.</p>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Hollywood carousel place -->
+                                        <div class="row w-100 d-flex my-2">
+                                            <div class="col-12 d-flex align-items-center">
+                                            <div id="carouselExampleIndicators2" class="slider overflow-hidden carousel slide mb-5" data-bs-ride="slide">
+                                                <div class="carousel-indicators">                                                
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                              </div>
+                                            <div class="carousel-inner holly_s ">
+                                                <div class="carousel-item ">
+                                                    <img class="w-100" src="imgH/IMAGE_1680000828.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img class="w-100" src="imgH/243470-fast-x-twitter.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item  ">
+                                                    <img class="w-100" src="img/img2.webp" alt="">
+                                                </div>
+                                            </div>
+                                            </div> 
+                                            </div> 
+                                        </div> 
+        
+                                        <!-- Hollywood cards place -->
+                                        <div class="row d-flex justify-content-evenly" id="hollywoodContain">
+                                            <!-- <div class="col-md-3 m-4" >
+                                                <div class="card border-0">
+                                                    <img class="card-img img" src="img/img16.jpg" alt="">
+                                                    <div class="card-body bg-black rounded-bottom-2">
+                                                       <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                       <p class="text-danger my-2">you can Watch all movies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 m-4" >
+                                                <div class="card border-0">
+                                                    <img class="card-img img" src="img/img2.webp" alt="">
+                                                    <div class="card-body bg-black rounded-bottom-2">
+                                                       <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                       <p class="text-danger my-2">you can Watch all movies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 m-4" >
+                                                <div class="card border-0">
+                                                    <img class="card-img img" src="img/img12.jpg" alt="">
+                                                    <div class="card-body bg-black rounded-bottom-2">
+                                                       <h3 class="text-white my-3 card-title">Hollywood Movies For You</h3>
+                                                       <p class="text-danger my-2">you can Watch all movies</p>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>          
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="bollywood">
+                                    <!-- bollywood movies block -->
+                                    <div class="col-12">
+        
+                                        <!--bollywood Movie heading place -->
+                                        <div class="row bg-black w-100">
+                                            <div class="col-12 text-start text-white text-center mt-4">
+                                                    <h1 class="fw-bolder"> <span class="text-warning">Bollywood</span> Movies For You</h1>
+                                                    <p class="fw-bold fs-2 text-danger">Watch anywhere. Cancel anytime.</p>
+                                            </div>
+                                        </div>
+        
+                                        <!--bollywood Movie carousel place -->
+    
+                                        <div class="row w-100 d-flex my-2">
+                                            <div class="col-12 d-flex align-items-center">
+                                            <div id="carouselExampleIndicators3" class="slider overflow-hidden carousel slide mb-5" data-bs-ride="slide">
+                                                <div class="carousel-indicators"> 
+                                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                              </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active ">
+                                                    <img class="w-100" src="B_img/B_imgimg6.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item  ">
+                                                    <img class="w-100" src="B_img/B_imgimg7.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item  ">
+                                                    <img class="w-100" src="B_img/B_imgimg5.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        </div> 
+                                        </div> 
+        
+                                        <!--bollywood Movie cards place -->
+                                        <div class="row d-flex justify-content-evenly" id="bollywoodContain">
+                                            <div class="col-md-3 m-4" >
+                                                <div class="card border-0">
+                                                    <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                    <div class="card-body bg-black rounded-bottom-2">
+                                                       <h3 class="text-white my-3 card-title">Bollywood Movies For You</h3>
+                                                       <p class="text-danger my-2">you can Watch all movies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>          
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="punjabi">
+                                    <!-- punjabi movies block -->
+                                    <div class="col-12">
+        
+                                        <!--punjabi Movie heading place -->
+                                        <div class="row bg-black w-100">
+                                            <div class="col-12 text-start text-white text-center mt-4">
+                                                    <h1 class="fw-bolder"> <span class="text-warning">Punjabi</span> Movies For You</h1>
+                                                    <p class="fw-bold fs-2 text-danger">Watch anywhere. Cancel anytime.</p>
+                                            </div>
+                                        </div>
+        
+                                        <!--punjabi Movie carousel place -->
+    
+                                        <div class="row w-100 d-flex my-2">
+                                            <div class="col-12 d-flex align-items-center">
+                                            <div id="carouselExampleIndicators5" class="slider overflow-hidden carousel slide mb-5" data-bs-ride="slide">
+                                                <div class="carousel-indicators"> 
+                                                <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                              </div>
+                                            <div class="carousel-inner ">
+                                                <div class="carousel-item active">
+                                                    <img class="w-100" src="P_img/img1.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item ">
+                                                    <img class="w-100" src="P_img/img2.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item ">
+                                                    <img class="w-100" src="P_img/img7.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        </div> 
+                                        </div> 
+        
+                                        <!--punjabi Movie cards place -->
+                                        <div class="row d-flex justify-content-evenly" id="punjabiContain">
+                                            <div class="col-md-3 m-4">
+                                                <div class="card border-0">
+                                                    <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                    <div class="card-body bg-black rounded-bottom-2">
+                                                       <h3 class="text-white my-3 card-title">Punjabi Movies For You</h3>
+                                                       <p class="text-danger my-2">you can Watch all movies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>          
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="haryanvi">
+                                    <!-- haryanvi movies block -->
+                                    <div class="col-12">
+        
+                                        <!--haryanvi Movie heading place -->
+                                        <div class="row bg-black w-100">
+                                            <div class="col-12 text-start text-white text-center mt-4">
+                                                    <h1 class="fw-bolder"> <span class="text-warning">Haryanvi</span> Movies For You</h1>
+                                                    <p class="fw-bold fs-2 text-danger">Watch anywhere. Cancel anytime.</p>
+                                            </div>
+                                        </div>
+        
+                                        <!--haryanvi Movie carousel place -->
+    
+                                        <div class="row w-100 d-flex my-2">
+                                            <div class="col-12 d-flex align-items-center">
+                                            <div id="carouselExampleIndicators6" class="slider overflow-hidden carousel slide mb-5" data-bs-ride="slide">
+                                                <div class="carousel-indicators"> 
+                                                <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                              </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img class="w-100" src="Hr_img/img2.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item ">
+                                                    <img class="w-100" src="Hr_img/img1.jpg" alt="">
+                                                </div>
+                                                <div class="carousel-item ">
+                                                    <img class="w-100" src="Hr_img/img3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        </div> 
+                                        </div> 
+        
+                                        <!--haryanvi Movie cards place -->
+                                        <div class="row d-flex justify-content-evenly" id="haryanviContain">
+                                            <div class="col-md-3 m-4">
+                                                <div class="card border-0">
+                                                    <img class="card-img img" src="https://bingeddata.s3.amazonaws.com/uploads/2021/06/Best-50-Hollywood-Movies-For-You-To-Stream-On-SonyLIV.jpg" alt="">
+                                                    <div class="card-body bg-black rounded-bottom-2">
+                                                       <h3 class="text-white my-3 card-title">Haryanvi Movies For You</h3>
+                                                       <p class="text-danger my-2">you can Watch all movies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    
+
+                    
+                    </div> 
+                    
+                </div>
+            </div>
+
+             <!-- website footer section -->
+        <div class="row bg-dark border border-4 border-secondary  zindex">
+            <div class="col-lg-2  d-flex align-items-center flex-column justify-content-center">
+                    <h4 class="text-danger pt-4 px-4 fw-bolder">Brand logo</h4>
+                    <p class="px-4 pb-4 text-white">All new more videos</p>
+            </div>
+            <div class="col-lg-2 mt-3 d-flex align-items-center text-center flex-column justify-content-center">
+                <h5 class="text-warning  fw-bold">About Us</h5>
+                <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur 
+                    consectetur autem maxime vel quod veritatis praesentium id quas nisi!</p>
+            </div>
+            <div class="col-lg-2 mt-3 my-auto">        
+                <nav class="nav-menu  d-flex align-items-center flex-column justify-content-center">
+                    <h5 class="fw-bold text-danger">Link</h5>
+                    <a class=" text-light mb-2" href="index.html">Home</a>
+                    <a class=" text-light mb-2" href="Music">Music</a>
+                    <a class=" text-light mb-2" href="Story">Story</a>
+                    <a class=" text-light" href="Cartoon">Cartoon</a>
+                </nav>
+            </div>
+            <div class="col-lg-6 d-flex mt-3 justify-content-center align-items-center flex-column">
+                <h4 class="text-white">Media Links</h4>
+                <nav class="nav justify-content-center flex-row align-items-center">
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center text-light mdlink" href=""><i class="fa-brands fa-facebook micon fa-2x mx-2"></i>Facebook</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center text-light mdlink" href=""><i class="fa-brands fa-instagram micon fa-2x mx-2"></i>Instagram</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center text-light mdlink" href=""><i class="fa-brands fa-linkedin micon fa-2x mx-2"></i>Linkedin</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center text-light mdlink" href=""><i class="fa-brands fa-github micon fa-2x mx-2"></i>Github</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center text-light mdlink" href=""><i class="fa-brands fa-youtube micon fa-2x mx-2"></i>Youtube</a></li>
+                </nav>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+        
+    </body>
